@@ -1,0 +1,7 @@
+0x459CC9: __ieee754_exp_sse2 (e_exp.c:70)
+0x459D06: __ieee754_exp_sse2 (e_exp.c:78)
+0x4109B1: hyperg_1F1_luke (hyperg_1F1.c:241)
+0x41550F: hyperg_1F1_ab_neg (hyperg_1F1.c:1747)
+0x42DEC2: __sin_sse2 (s_sin.c:404)
+0x459DBF: __ieee754_exp_sse2 (e_exp.c:94)
+0x42D63F: __sin_sse2 (s_sin.c:351)

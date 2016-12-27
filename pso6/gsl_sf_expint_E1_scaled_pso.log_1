@@ -1,0 +1,6 @@
+0x4375BB: __ieee754_log_sse2 (e_log.c:102)
+0x4375D0: __ieee754_log_sse2 (e_log.c:102)
+0x4375E0: __ieee754_log_sse2 (e_log.c:102)
+0x435EB9: __ieee754_exp_sse2 (e_exp.c:70)
+0x435EF6: __ieee754_exp_sse2 (e_exp.c:78)
+0x435FAF: __ieee754_exp_sse2 (e_exp.c:94)

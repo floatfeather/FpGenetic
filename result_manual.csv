@@ -1,0 +1,197 @@
+function, genetic, random
+gsl_sf_airy_Ai , 9.93211e10 , 1.98908e0
+gsl_sf_airy_Ai_deriv , 1.21854e0 , 1.01935e0
+gsl_sf_airy_Ai_deriv_scaled , 1.21854e0 , 1.01935e0
+gsl_sf_airy_Ai_scaled , 9.93211e10 , 1.98908e0
+gsl_sf_airy_Bi , 3.84411e4 , 1.27328e0
+gsl_sf_airy_Bi_deriv , 1.05623e-1 , 1.89848e-2
+gsl_sf_airy_Bi_deriv_scaled , 1.05623e-1 , 1.89848e-2
+gsl_sf_airy_Bi_scaled , 3.84411e4 , 1.27328e0
+gsl_sf_angle_restrict_pos , 3.15367e-2 , 1.73594e-3
+gsl_sf_angle_restrict_symm , 7.62754e-2 , 1.73594e-3
+gsl_sf_atanint , 1.79406e-16 , 1.54917e-16
+gsl_sf_bessel_I0 , 3.50546e-16 , 9.52213e-17
+gsl_sf_bessel_i0_scaled , 1e0 , 1e0
+gsl_sf_bessel_I0_scaled , 3.13899e-16 , 1.60581e-16
+gsl_sf_bessel_I1 , 2.84804e-16 , 1.16476e-16
+gsl_sf_bessel_i1_scaled , 1e0 , 1e0
+gsl_sf_bessel_I1_scaled , 3.25561e-16 , 1.62098e-16
+gsl_sf_bessel_i2_scaled , 1e0 , 1e0
+gsl_sf_bessel_il_scaled # , 1.34181e295 , 3.81177e-16
+gsl_sf_bessel_In # , ,
+gsl_sf_bessel_In_scaled # , 3.80747e-6 , 4.72715e-16
+gsl_sf_bessel_Inu , 2.38964e-16 , 4.05045e-15
+gsl_sf_bessel_Inu_scaled , 3.71109e-6 , 1.00463e-16
+gsl_sf_bessel_j0 , 2.84716e11 , 2.89248e3
+gsl_sf_bessel_J0 , 4.55551e-15 , 3.20861e-15
+gsl_sf_bessel_j1 , 1.87305e15 , 4.12303e4
+gsl_sf_bessel_J1 , 2.32664e-15 , 4.98202e-16
+gsl_sf_bessel_j2 , 2.84716e11 , 2.89248e3
+gsl_sf_bessel_jl # , 3.45864e21 , 1.43361e-16
+gsl_sf_bessel_Jn # , 2.65349e21 , 3.23413e-6
+gsl_sf_bessel_Jnu , 2.87247e4 , 7.09016e-17
+gsl_sf_bessel_K0 , 7.27888e-16 , 2.87007e-16
+gsl_sf_bessel_k0_scaled , 1.05151e-16 , 1.06572e-16
+gsl_sf_bessel_K0_scaled , 6.77913e-16 , 2.87007e-16
+gsl_sf_bessel_K1 , 3.77223e-16 , 1.02447e-16
+gsl_sf_bessel_k1_scaled , 2.61159e-16 , 1.86619e-16
+gsl_sf_bessel_K1_scaled , 3.1873e-16 , 1.35513e-16
+gsl_sf_bessel_k2_scaled , 3.03709e-16 , 1.42421e-16
+gsl_sf_bessel_kl_scaled # , 3.30497e-8 , 1.02278e-16
+gsl_sf_bessel_Kn # , ,
+gsl_sf_bessel_Kn_scaled # , 3.68121e-6 , 2.06821e-17
+gsl_sf_bessel_Knu , 2.46977e-16 , 2.54472e-14
+gsl_sf_bessel_Knu_scaled , 2.43836e-16 , 2.09129e-14
+gsl_sf_bessel_lnKnu , 3.48301e-16 , 1.63591e-16
+gsl_sf_bessel_y0 , 1.03685e-16 , 9.88778e-17
+gsl_sf_bessel_Y0 , 5.6174e-16 , 2.46484e-16
+gsl_sf_bessel_y1 , 1.51781e-16 , 1.24595e-16
+gsl_sf_bessel_Y1 , 1.14216e-15 , 2.17532e-16
+gsl_sf_bessel_y2 , 1.87305e15 , 4.13498e0
+gsl_sf_bessel_yl # , 8.25796e-3 , 1.29627e-4
+gsl_sf_bessel_Yn # , 1.58289e-2 , 1.9266e-2
+gsl_sf_bessel_Ynu , 2.97298e4 , 1.07883e-14
+gsl_sf_beta , 3.807e-6 , 1.67677e-6
+gsl_sf_beta_inc , 3.77611e-6 , 2.09262e-13
+gsl_sf_Chi , 3.23204e-16 , 7.03482e-17
+gsl_sf_Ci , 2.84716e11 , 2.41118e0
+gsl_sf_clausen , 2.10351e-1 , 1.41427e-3
+gsl_sf_conicalP_0 , 2.5e0 , 7.40889e-6
+gsl_sf_conicalP_1 , 6.40545e0 , 1.40704e-4
+gsl_sf_conicalP_cyl_reg # , 1e0 , 0e-65536
+gsl_sf_conicalP_half , 5.63509e4 , 2.74216e2
+gsl_sf_conicalP_mhalf , 1.53771e7 , 1.97314e0
+gsl_sf_conicalP_sph_reg # , 5.00208e-16 , 0e-65536
+gsl_sf_cos , 1.87305e15 , 4.12303e4
+gsl_sf_coupling_3j # , 0e-65536 , 0e-65536
+gsl_sf_coupling_6j # , 0e-65536 , 0e-65536
+gsl_sf_coupling_9j # , 0e-65536 ,
+gsl_sf_dawson , 5.88438e-16 , 1.05437e-16
+gsl_sf_debye_1 , 2.07206e-16 , 1.03839e-16
+gsl_sf_debye_2 , 2.30129e-14 , 1.39027e-16
+gsl_sf_debye_3 , 4.04544e-14 , 1.96994e-16
+gsl_sf_debye_4 , 1.12574e-13 , 1.99258e-16
+gsl_sf_debye_5 , 1.81642e-12 , 1.6111e-16
+gsl_sf_debye_6 , 5.53121e-12 , 2.57369e-16
+gsl_sf_dilog , 6.86799e-16 , 4.19032e-16
+gsl_sf_ellint_D , 1e0 , 1e0
+gsl_sf_ellint_Dcomp , 3.59662e-16 , 3.77592e-16
+gsl_sf_ellint_E , 2.70978e-1 , 1e0
+gsl_sf_ellint_Ecomp , 2.09536e-16 , 2.02364e-17
+gsl_sf_ellint_F , 1e0 , 1e0
+gsl_sf_ellint_Kcomp , 1.72179e-16 , 2.56751e-17
+gsl_sf_ellint_P , 4.58333e17 , 4.80567e0
+gsl_sf_ellint_Pcomp , 1.00992e2 , 1.04193e0
+gsl_sf_ellint_RC , 2.01768e-16 , 1.93947e-16
+gsl_sf_ellint_RD , 4.37926e-16 , 2.48063e-16
+gsl_sf_ellint_RF , 2.48274e-16 , 2.01459e-16
+gsl_sf_ellint_RJ , 5.34332e-16 , 0e-65536
+gsl_sf_erf , 2.04323e-15 , 1.04936e-15
+gsl_sf_erfc_ , 2.98582e-15 , 1.47488e-16
+gsl_sf_erfc , 2.98582e-15 , 1.47488e-16
+gsl_sf_erf_Q , 2.60978e-14 , 1.0679e-16
+gsl_sf_erf_Z , 2.59292e-14 , 6.48519e-17
+gsl_sf_eta , 2.49943e-15 , 8.7901e-16
+gsl_sf_eta_int # , 0e-65536 , 0e-65536
+gsl_sf_exp , 1.02328e-16 , 1.0057e-16
+gsl_sf_expint_3 , 2.35521e-16 , 0e-65536
+gsl_sf_expint_E1 , 2.76004e-16 , 1.40696e-16
+gsl_sf_expint_E1_scaled , 2.72605e-16 , 2.09426e-16
+gsl_sf_expint_E2 , 1.34585e-13 , 1.51039e-16
+gsl_sf_expint_E2_scaled , 1.66054e1 , 2.90134e0
+gsl_sf_expint_Ei , 0e-65536 , 0e-65536
+gsl_sf_expint_Ei_scaled , 0e-65536 , 0e-65536
+gsl_sf_expint_En # , 4.40945e-14 , 0e-65536
+gsl_sf_expint_En_scaled # , 6.3099e-14 , 0e-65536
+gsl_sf_expm1 , 4.81939e-14 , 8.03758e-17
+gsl_sf_exp_mult , 5.67393e-14 , 5.3937e-14
+gsl_sf_exprel_2 , 3.44345e-11 , 1.09503e-16
+gsl_sf_exprel , 4.76266e-14 , 1.05437e-16
+gsl_sf_exprel_n # , 3.94626e-16 , 2.37239e-16
+gsl_sf_fermi_dirac_0 , 3.34342e-16 , 1.12511e-16
+gsl_sf_fermi_dirac_1 , 3.90971e-16 , 6.77467e-17
+gsl_sf_fermi_dirac_2 , 3.38754e-16 , 2.08288e-16
+gsl_sf_fermi_dirac_3half , 8.14887e-14 , 1.02486e-13
+gsl_sf_fermi_dirac_half , 8.53113e-14 , 8.08379e-14
+gsl_sf_fermi_dirac_inc_0 , 1e0 , 1.12038e-16
+gsl_sf_fermi_dirac_int # , ,
+gsl_sf_fermi_dirac_m1 , 1.82711e-16 , 8.85672e-17
+gsl_sf_fermi_dirac_mhalf , 2.91362e-14 , 2.64095e-14
+gsl_sf_gamma , 7.77224e-16 , 2.21388e-16
+gsl_sf_gamma_inc , 7.06261e-1 , 2.34946e-16
+gsl_sf_gamma_inc_P , 7.26228e-14 , 9.88087e-15
+gsl_sf_gamma_inc_Q , 7.06261e-1 , 4.12445e-17
+gsl_sf_gammainv , 5.76015e-16 , 1.87762e-16
+gsl_sf_gammastar , 1.05303e-13 , 4.84436e-14
+gsl_sf_gegenpoly_1 , 1e0 , 1e0
+gsl_sf_gegenpoly_2 , 6.11678e-16 , 2.40601e-16
+gsl_sf_gegenpoly_3 , 1e0 , 1e0
+gsl_sf_gegenpoly_n # , 1e0 , 3.59321e-16
+gsl_sf_hazard , 1.10569e-13 , 6.91707e-17
+gsl_sf_hydrogenicR_1 , 4.69872e-14 , 2.20719e-15
+gsl_sf_hydrogenicR # , ,
+gsl_sf_hyperg_0F1 , 7.21337e-9 , 5.22557e-14
+gsl_sf_hyperg_1F1 , 8.59259e16 , 9.01896e-1
+gsl_sf_hyperg_1F1_int # , 1e0 , 6.6914e-10
+gsl_sf_hyperg_2F0 , 5.39569e-14 , 3.55271e-15
+gsl_sf_hyperg_2F1 , 1.89012e1 , 1.55615e-19
+gsl_sf_hyperg_2F1_conj , 8.68067e13 , 2.48922e-16
+gsl_sf_hyperg_2F1_conj_renorm , 1.72726e13 , 1.02777e-14
+gsl_sf_hyperg_2F1_renorm , 1.45399e1 , 7.10874e-14
+gsl_sf_hyperg_U , 3.86713e-6 , 2.40295e-14
+gsl_sf_hyperg_U_int # , 3.57786e-6 , 1.91653e-15
+gsl_sf_hypot , 8.9974e-17 , 7.88871e-17
+gsl_sf_hzeta , 0e-65536 , 0e-65536
+gsl_sf_laguerre_1 , 1.17089e-16 , 8.37965e-17
+gsl_sf_laguerre_2 , 2.49872e-16 , 1.93293e-16
+gsl_sf_laguerre_3 , 2.81424e-15 , 1.75767e-16
+gsl_sf_laguerre_n # , 3.80224e-6 , 9.52801e-15
+gsl_sf_lambert_W0 , 1e0 , 1e0
+gsl_sf_lambert_Wm1 , 1e0 , 1e0
+gsl_sf_legendre_H3d_0 , 6.12307e3 , 6.81408e0
+gsl_sf_legendre_H3d_1 , 4.90846e2 , 1e0
+gsl_sf_legendre_H3d # , 1e0 , 3.1905e-14
+gsl_sf_legendre_P1 , 0e-65536 , 0e-65536
+gsl_sf_legendre_P2 , 2.50523e-16 , 1.62996e-16
+gsl_sf_legendre_P3 , 5.90579e-16 , 2.7871e-15
+gsl_sf_legendre_Pl # , 2.72523e-5 , 3.19386e-9
+gsl_sf_legendre_Plm # , 3.61783e-14 , 0e-65536
+gsl_sf_legendre_Q0 , 1.76128e-16 , 9.95607e-17
+gsl_sf_legendre_Q1 , 1.93677e-15 , 1.81475e-16
+gsl_sf_legendre_Ql # , 2.46038e0 , 2.0907e0
+gsl_sf_legendre_sphPlm # , ,
+gsl_sf_lnbeta , 6.56401e-2 , 3.10181e-15
+gsl_sf_lncosh , 1e0 , 1e0
+gsl_sf_lngamma , 3.82192e-16 , 1.41099e-16
+gsl_sf_lnpoch , 1e0 , 1e0
+gsl_sf_lnsinh , 1.04825e-16 , 1.03728e-16
+gsl_sf_log_1plusx , 2.19623e-16 , 1.05968e-16
+gsl_sf_log_1plusx_mx , 1e0 , 1e0
+gsl_sf_log_abs , 1.04221e-16 , 1.03728e-16
+gsl_sf_log , 1.03872e-16 , 1.03728e-16
+gsl_sf_log_erfc , 4.94755e-16 , 1.0197e-15
+gsl_sf_multiply , 1.06762e-16 , 1.01931e-16
+gsl_sf_poch , 3.81412e-6 , 1.97695e-13
+gsl_sf_pochrel , 2.17754e-8 , 7.57632e-13
+gsl_sf_pow_int # , 1e0 , 1e0
+gsl_sf_psi_1 , 2.92821e-2 , 5.42511e-14
+gsl_sf_psi_1_int # , 2.697e-16 , 1.96924e-16
+gsl_sf_psi_1piy , 3.98867e-16 , 9.31942e-17
+gsl_sf_psi , 3.56526e-2 , 1.8412e-16
+gsl_sf_psi_int # , 2.44234e-16 , 1.90769e-16
+gsl_sf_psi_n # , 1.39519e1 , 0e-65536
+gsl_sf_Shi , 2.77866e-16 , 1.15488e-16
+gsl_sf_Si , 1.5659e-16 , 6.67239e-17
+gsl_sf_sin , 2.84716e11 , 2.89248e3
+gsl_sf_sinc , 1.72658e5 , 1.75226e1
+gsl_sf_synchrotron_1 , 3.1484e-13 , 2.15591e-16
+gsl_sf_synchrotron_2 , 2.72794e-13 , 1.29275e-16
+gsl_sf_taylorcoeff # , 1.09733e-15 , 0e-65536
+gsl_sf_transport_2 , 1.56028e-16 , 0e-65536
+gsl_sf_transport_3 , 2.13103e-16 , 7.6804e-17
+gsl_sf_transport_4 , 4.08069e-16 , 9.05375e-17
+gsl_sf_transport_5 , 7.30571e-16 , 1.19766e-16
+gsl_sf_zeta , 1.62501e-15 , 1.01159e-15
+gsl_sf_zeta_int # , 1.09179e-16 , 0e-65536
+gsl_sf_zetam1 , 6.33791e-15 , 4.1121e-16
+gsl_sf_zetam1_int # , 6.62821e-17 , 0e-65536

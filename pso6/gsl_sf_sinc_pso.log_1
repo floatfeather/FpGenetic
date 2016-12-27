@@ -1,0 +1,8 @@
+0x40120D: gsl_sf_sin_e (trig.c:199)
+0x404251: do_cos_slow.isra.3 (s_sin.c:179)
+0x404257: do_cos_slow.isra.3 (s_sin.c:181)
+0x40696D: __sin_sse2 (s_sin.c:388)
+0x404627: do_sin_slow.isra.5 (s_sin.c:227)
+0x40462C: do_sin_slow.isra.5 (s_sin.c:229)
+0x406742: __sin_sse2 (s_sin.c:404)
+0x405EBF: __sin_sse2 (s_sin.c:351)

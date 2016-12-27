@@ -1,0 +1,6 @@
+0x45A149: __ieee754_exp_sse2 (e_exp.c:70)
+0x45A186: __ieee754_exp_sse2 (e_exp.c:78)
+0x45A23F: __ieee754_exp_sse2 (e_exp.c:94)
+0x45A2CD: __ieee754_exp_sse2 (e_exp.c:136)
+0x45A2FA: __ieee754_exp_sse2 (e_exp.c:141)
+0x45A3BB: __ieee754_exp_sse2 (e_exp.c:152)

@@ -1,0 +1,7 @@
+0x4323A7: __exp1 (e_exp.c:247)
+0x4323CF: __exp1 (e_exp.c:252)
+0x4323E9: __exp1 (e_exp.c:255)
+0x434809: __ieee754_pow_sse2 (e_pow.c:313)
+0x434831: __ieee754_pow_sse2 (e_pow.c:105)
+0x434836: __ieee754_pow_sse2 (e_pow.c:106)
+0x434860: __ieee754_pow_sse2 (e_pow.c:110)

@@ -1,0 +1,5 @@
+0x46B2F9: __ieee754_exp_sse2 (e_exp.c:70)
+0x46B336: __ieee754_exp_sse2 (e_exp.c:78)
+0x46EC97: __sinh_finite (e_sinh.c:85)
+0x46EFAE: expm1 (s_expm1.c:193)
+0x40892D: gsl_sf_sin_e (trig.c:199)
