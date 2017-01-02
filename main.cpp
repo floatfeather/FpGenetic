@@ -19,35 +19,35 @@ int main(int argc, char const *argv[])
 	GeneticRunner g_runner(options);
 	Status status = g_runner.Start();
 	if (status.OK()) {
-		Gene g = g_runner.GetBestGene();
-		char filename[100] = "geneticlog/";
-		strcat(filename, argv[1]);
-		strcat(filename, ".log");
-		ofstream out(filename);
-		for(auto arg: g.arguments_) {
-			out << arg->DebugString() << " ";
-		}
-		out << endl;
-		out << g.frac_ << "e" << g.exp_ << endl;
-		out.close();
+		// Gene g = g_runner.GetBestGene();
+		// char filename[100] = "geneticlog/";
+		// strcat(filename, argv[1]);
+		// strcat(filename, ".log");
+		// ofstream out(filename);
+		// for(auto arg: g.arguments_) {
+		// 	out << arg->DebugString() << " ";
+		// }
+		// out << endl;
+		// out << g.frac_ << "e" << g.exp_ << endl;
+		// out.close();
 	} else {
 		cerr << status.ErrorMessage() << endl;
 	}
-	options.SetMaxInitPopulations(options.MaxPopulations());
-	RandomRunner r_runner(options);
-	status = r_runner.Start();
-	if (status.OK()) {
-		Gene g = r_runner.GetBestGene();
-		char filename[100] = "randomlog/";
-		strcat(filename, argv[1]);
-		strcat(filename, ".log");
-		ofstream out(filename);
-		for(auto arg: g.arguments_) {
-			out << arg->DebugString() << " ";
-		}
-		out << endl;
-		out << g.frac_ << "e" << g.exp_ << endl;
-		out.close();
-	}
+	// options.SetMaxInitPopulations(options.MaxPopulations());
+	// RandomRunner r_runner(options);
+	// status = r_runner.Start();
+	// if (status.OK()) {
+		// Gene g = r_runner.GetBestGene();
+		// char filename[100] = "randomlog/";
+		// strcat(filename, argv[1]);
+		// strcat(filename, ".log");
+		// ofstream out(filename);
+		// for(auto arg: g.arguments_) {
+		// 	out << arg->DebugString() << " ";
+		// }
+		// out << endl;
+		// out << g.frac_ << "e" << g.exp_ << endl;
+		// out.close();
+	// }
 	return 0;
 }

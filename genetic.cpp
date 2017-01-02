@@ -182,26 +182,26 @@ uint Runner::RandUint() {
 
 void Runner::TestGene(Gene* gene) {
 	int k;
-	if(pipe(pipefd_) < 0) {
-		printf("Failed to create pipe!\n");
-		exit(0);
-	}
-	pid_ = fork();
-	if (pid_ == 0) {
-		RunFPDebug(*gene);
-	} else {
+	// if(pipe(pipefd_) < 0) {
+	// 	printf("Failed to create pipe!\n");
+	// 	exit(0);
+	// }
+	// pid_ = fork();
+	// if (pid_ == 0) {
+	// 	RunFPDebug(*gene);
+	// } else {
 		printf("input: ");
 		for (auto arg : gene->arguments_) {
 			printf("%s ", arg->DebugString().c_str());
 		}
 		printf("\n");
-		signal(SIGALRM, handler);
-		alarm(options_.ExecutionTimeout());
-		waitpid(pid_, NULL, 0);
-		GetRelativeError(gene);
-		printf("relative error:  %lfe%d\n", gene->frac_, gene->exp_);
-		UpdateMaxError(gene);
-	}
+		// signal(SIGALRM, handler);
+		// alarm(options_.ExecutionTimeout());
+		// waitpid(pid_, NULL, 0);
+		// GetRelativeError(gene);
+		// printf("relative error:  %lfe%d\n", gene->frac_, gene->exp_);
+		// UpdateMaxError(gene);
+	// }
 }
 
 void Runner::RunFPDebug(const Gene& gene) {
@@ -413,7 +413,8 @@ void Runner::InitExtremeValues() {
 					for(int i = 0; i < sz; i++) {
 						temp[i] = GetFloatExtVal();
 					}
-					g->arguments_.push_back(new Argument(float_type, temp, false, true, sz));
+					Argument* a = new Argument(float_type, temp, false, true, sz);
+					g->arguments_.push_back(a);
 				} else {
 					uint temp = GetFloatExtVal();
 					g->arguments_.push_back(new Argument(float_type, &temp));
@@ -687,6 +688,9 @@ uint GeneticRunner::MutateFloat(uint value) {
 
 int GeneticRunner::MutateInt(int value, bool is_unsigned = false) { // TODO: overflow and underflow
 	int gap = value / 2;
+	if (gap == 0) {
+		gap = 1 << 4;
+	}
 	int new_value = value + rand() % gap - (gap / 2);
 	if (!is_unsigned && rand() % 10 == 0) new_value = -new_value;
 	return new_value;
@@ -694,6 +698,9 @@ int GeneticRunner::MutateInt(int value, bool is_unsigned = false) { // TODO: ove
 
 short GeneticRunner::MutateShort(short value, bool is_unsigned = false) { // TODO: overflow and underflow
 	short gap = value / 2;
+	if (gap == 0) {
+		gap = 1 << 4;
+	}
 	short new_value = value + rand() % gap - (gap / 2);
 	if (!is_unsigned && rand() % 10 == 0) new_value = -new_value;
 	return new_value;
@@ -701,6 +708,9 @@ short GeneticRunner::MutateShort(short value, bool is_unsigned = false) { // TOD
 
 long GeneticRunner::MutateLong(long value, bool is_unsigned = false) { // TODO: overflow and underflow
 	long gap = value / 2;
+	if (gap == 0) {
+		gap = 1 << 4;
+	}
 	long new_value = value + rand() % gap - (gap / 2);
 	if (!is_unsigned && rand() % 10 == 0) new_value = -new_value;
 	return new_value;

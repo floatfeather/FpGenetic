@@ -39,17 +39,17 @@ Argument::Argument(TypeName t, void* value, bool is_unsigned, bool is_array, int
 				int_arr_val_[i] = temp[i];
 			}
 		} else if (t == float_type) {
-			unsigned int* temp = (unsigned int*)temp;
+			unsigned int* temp = (unsigned int*)value;
 			for(int i = 0; i < array_size_; i++) {
 				float_arr_val_[i] = temp[i];
 			}
 		} else if (t == short_type) {
-			short* temp = (short*)temp;
+			short* temp = (short*)value;
 			for(int i = 0; i < array_size_; i++) {
 				short_arr_val_[i] = temp[i];
 			}
 		} else if (t == long_type) {
-			long* temp = (long*)temp;
+			long* temp = (long*)value;
 			for(int i = 0; i < array_size_; i++) {
 				long_arr_val_[i] = temp[i];
 			}
