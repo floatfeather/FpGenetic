@@ -11,10 +11,6 @@ Argument::Argument(TypeName t, void* value, bool is_unsigned, bool is_array, int
 	is_unsigned_ = is_unsigned;
 	is_array_ = is_array;
 	array_size_ = array_size;
-	if (array_size > MAX_ARRAY_SIZE) {
-		printf("Array size should not be larger than %d.\n", MAX_ARRAY_SIZE);
-		exit(1);
-	}
 	if (!is_array_) {
 		if (t == double_type) {
 			double_val_ = *(unsigned long int*)value;
@@ -113,6 +109,8 @@ void Argument::ToString(char * buf) {
 		}
 	} else {
 		char temp[20];
+		sprintf(temp, "%d ", array_size_);
+		strcat(buf, temp);
 		if (type_ == double_type) {
 			for(int i = 0; i < array_size_; i++) {
 				sprintf(temp, "%lX ", double_arr_val_[i]);
@@ -185,6 +183,8 @@ string Argument::DebugString() {
 		}
 	} else {
 		char tbuf[20];
+		sprintf(tbuf, "%d ", array_size_);
+		strcat(buf, tbuf);
 		if (type_ == double_type) {
 			double* temp = (double*)double_arr_val_;
 			for(int i = 0; i < array_size_; i++) {
