@@ -193,7 +193,9 @@ void Runner::TestGene(Gene* gene) {
 	} else {
 		printf("input: ");
 		for (auto arg : gene->arguments_) {
-			printf("%s ", arg->DebugString().c_str());
+			char output[50];
+			arg->ToString(output);
+			printf("%s ", output);
 		}
 		printf("\n");
 		signal(SIGALRM, handler);
@@ -221,7 +223,6 @@ void Runner::RunFPDebug(const Gene& gene) {
 	for(int i = 0; i < gene.arguments_.size(); i++) {
 		gene.arguments_[i]->ToString(arg_str[i]);
 	}
-	cout << "here" << endl;
 	char script[100] = "/home/lillian/work/install_fpdebug/valgrind-3.7.0/fpdebug/script/fpdebug.sh";
 	switch(gene.arguments_.size()) {
 		case 1:
@@ -258,7 +259,6 @@ void Runner::RunFPDebug(const Gene& gene) {
 			}
 			break;
 	}
-	cout << "end" << endl;
 	close(pipefd_[1]);
 }
 
@@ -285,6 +285,12 @@ void Runner::GetRelativeError(Gene* gene) {
 	// }
 	// pos1 += strlen("RELATIVE ERROR:");
 	FILE * f = fopen("fpdebug_relerr.log", "r");
+	if (f == NULL) {
+		cout << "Fail to open file fpdebug_relerr.log!" << endl;
+		gene->frac_ = 0;
+		gene->exp_ = -65536;
+		return;
+	}
 	fread(buf, 1, 8192, f);
 	sscanf(buf, "%lf", &(gene->frac_));
 	if (strchr(buf, '@') != NULL || gene->frac_ < 1)
@@ -296,6 +302,7 @@ void Runner::GetRelativeError(Gene* gene) {
 	}
 	char * pos2 = strchr(buf,'^');
 	sscanf(pos2+1, "%d", &(gene->exp_));
+	fclose(f);
 }
 
 ulong Runner::CreateDouble(int sign, int expt) {

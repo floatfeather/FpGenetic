@@ -1,21 +1,23 @@
 #!/bin/bash
 
-while read filename
-do
-	cp $filename int
-done < ../test_program_generator/int_function.log
+#while read filename
+#do
+#	cp $filename int
+#done < ../test_program_generator/int_function.log
 
-cd int
-int_files=`ls *.c`
-cd ..
+#cd int
+#int_files=`ls *.c`
+#cd ..
 
-cd others
+comp=$1
+
+cd others/$comp
 files=`ls *.c`
-cd ..
+cd ../..
 
-rm result.csv
-touch result.csv
-echo "function, genetic, random" >> result.csv
+rm result_${comp}.csv
+touch result_${comp}.csv
+echo "function, genetic, random" >> result_${comp}.csv
 
 for file in $files
 do
@@ -29,7 +31,7 @@ do
 	done
 	execfile=${file%.c}
 	logfile=${execfile}.log
-	cd geneticlog
+	cd geneticlog/${comp}
 	gen=
 	if [ -f $logfile ]; then
 		while read line
@@ -37,8 +39,8 @@ do
 			gen=$line
 		done < $logfile
 	fi
-	cd ..
-	cd randomlog
+	cd ../..
+	cd randomlog/${comp}
 	ran=
 	if [ -f $logfile ]; then
 		while read line
@@ -46,7 +48,7 @@ do
 			ran=$line
 		done < $logfile
 	fi
-	cd ..
-	echo $execfile $suffix "," $gen "," $ran >> result.csv
+	cd ../..
+	echo $execfile $suffix "," $gen "," $ran >> result_${comp}.csv
 done
 
