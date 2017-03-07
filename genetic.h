@@ -46,7 +46,7 @@ private:
 
 class Runner {
 public:
-	Runner(const RunnerOptions& op);
+	Runner(const RunnerOptions& op, const string project);
 	virtual ~Runner();
 	virtual Status Start() = 0;
 	virtual unsigned long int GetDouble() = 0;
@@ -84,11 +84,12 @@ public:
 	int pipefd_[2];
 	Gene* best_gene_;
 	vector<Stage> stages_;
+	string project_;
 };
 
 class GeneticRunner : private Runner {
 public:
-	GeneticRunner(const RunnerOptions& op);
+	GeneticRunner(const RunnerOptions& op, const string project);
 	Status Start();
 	using Runner::GetBestGene;
 
@@ -125,7 +126,7 @@ private:
 
 class RandomRunner : private Runner {
 public:
-	RandomRunner(const RunnerOptions& op);
+	RandomRunner(const RunnerOptions& op, const string project);
 	Status Start();
 	using Runner::GetBestGene;
 

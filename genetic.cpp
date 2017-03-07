@@ -101,10 +101,11 @@ RunnerOptions& RunnerOptions::operator=(const RunnerOptions& rhs){
 }
 
 // Runner
-Runner::Runner(const RunnerOptions& op) {
+Runner::Runner(const RunnerOptions& op, const string project) {
 	options_ = op;
 	generated_tests_ = 0;
 	best_gene_ = NULL;
+	project_ = project;
 };
 
 Runner::~Runner() {
@@ -118,7 +119,7 @@ Runner::~Runner() {
 
 Status Runner::ReadFunctionMetadata() {
 	cout << "Reading types of arguments..." << endl;
-	string meta_filename = "others/" + options_.Filename() + ".c.meta";
+	string meta_filename = "others/" + project_ + "/" + options_.Filename() + ".c.meta";
 	ifstream meta_in(meta_filename.c_str());
 	string type;
 	while(meta_in >> type) {
@@ -182,26 +183,26 @@ uint Runner::RandUint() {
 
 void Runner::TestGene(Gene* gene) {
 	int k;
-	// if(pipe(pipefd_) < 0) {
-	// 	printf("Failed to create pipe!\n");
-	// 	exit(0);
-	// }
-	// pid_ = fork();
-	// if (pid_ == 0) {
-	// 	RunFPDebug(*gene);
-	// } else {
+	if(pipe(pipefd_) < 0) {
+		printf("Failed to create pipe!\n");
+		exit(0);
+	}
+	pid_ = fork();
+	if (pid_ == 0) {
+		RunFPDebug(*gene);
+	} else {
 		printf("input: ");
 		for (auto arg : gene->arguments_) {
 			printf("%s ", arg->DebugString().c_str());
 		}
 		printf("\n");
-		// signal(SIGALRM, handler);
-		// alarm(options_.ExecutionTimeout());
-		// waitpid(pid_, NULL, 0);
-		// GetRelativeError(gene);
-		// printf("relative error:  %lfe%d\n", gene->frac_, gene->exp_);
-		// UpdateMaxError(gene);
-	// }
+		signal(SIGALRM, handler);
+		alarm(options_.ExecutionTimeout());
+		waitpid(pid_, NULL, 0);
+		GetRelativeError(gene);
+		printf("relative error:  %lfe%d\n", gene->frac_, gene->exp_);
+		UpdateMaxError(gene);
+	}
 }
 
 void Runner::RunFPDebug(const Gene& gene) {
@@ -213,11 +214,14 @@ void Runner::RunFPDebug(const Gene& gene) {
 		printf("dup2 error2\n");
 	}
 	char execfile[100] = "./others/";
+	strcat(execfile, project_.c_str());
+	strcat(execfile, "/");
 	strcat(execfile, options_.Filename().c_str());
 	char arg_str[5][100];
 	for(int i = 0; i < gene.arguments_.size(); i++) {
 		gene.arguments_[i]->ToString(arg_str[i]);
 	}
+	cout << "here" << endl;
 	char script[100] = "/home/lillian/work/install_fpdebug/valgrind-3.7.0/fpdebug/script/fpdebug.sh";
 	switch(gene.arguments_.size()) {
 		case 1:
@@ -254,6 +258,7 @@ void Runner::RunFPDebug(const Gene& gene) {
 			}
 			break;
 	}
+	cout << "end" << endl;
 	close(pipefd_[1]);
 }
 
@@ -543,7 +548,7 @@ void Runner::PrintGenes() {
 	}
 }
 
-GeneticRunner::GeneticRunner(const RunnerOptions& op) : Runner(op) {}
+GeneticRunner::GeneticRunner(const RunnerOptions& op, const string project) : Runner(op, project) {}
 
 Status GeneticRunner::Start() {
 	cout << "Start!" << endl;
@@ -924,7 +929,7 @@ char GeneticRunner::GetChar() {
 	return 'a' + rand() % 26;
 }
 
-RandomRunner::RandomRunner(const RunnerOptions& op) : Runner(op) {}
+RandomRunner::RandomRunner(const RunnerOptions& op, const string project) : Runner(op, project) {}
 
 Status RandomRunner::Start() {
 	cout << "Start!" << endl;
