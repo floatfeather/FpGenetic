@@ -87,7 +87,7 @@ public:
 	string project_;
 };
 
-class GeneticRunner : private Runner {
+class GeneticRunner : protected Runner {
 public:
 	GeneticRunner(const RunnerOptions& op, const string project);
 	Status Start();
@@ -125,19 +125,36 @@ private:
 	vector<long> long_pool_;
 };
 
-class RandomRunner : private Runner {
+class RandomRunner : protected Runner {
 public:
 	RandomRunner(const RunnerOptions& op, const string project);
 	Status Start();
 	using Runner::GetBestGene;
 
-private:
+protected:
 	unsigned long int GetDouble();
 	int GetInt(bool);
 	unsigned int GetFloat();
 	short GetShort(bool);
 	long GetLong(bool);
 	char GetChar();
+};
+
+class StdGeneticRunner : protected GeneticRunner {
+public:
+	StdGeneticRunner(const RunnerOptions& op, const string project);
+	Status Start();
+	using GeneticRunner::GetBestGene;
+
+protected:
+	unsigned long int GetDouble();
+	int GetInt(bool);
+	unsigned int GetFloat();
+	short GetShort(bool);
+	long GetLong(bool);
+	char GetChar();
+	unsigned long int MutateDouble(unsigned long int);
+	unsigned int MutateFloat(unsigned int);
 };
 
 // class InputRunner : private Runner {

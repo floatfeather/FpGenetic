@@ -35,6 +35,25 @@ int main(int argc, char const *argv[])
 	} else {
 		cerr << status.ErrorMessage() << endl;
 	}
+
+	StdGeneticRunner std_g_runner(options, string(argv[2]));
+	status = std_g_runner.Start();
+	if (status.OK()) {
+		Gene g = std_g_runner.GetBestGene();
+		char filename[100] = "stdgeneticlog/";
+		strcat(filename, argv[2]);
+		strcat(filename , "/");
+		strcat(filename, argv[1]);
+		strcat(filename, ".log");
+		ofstream out(filename);
+		for(auto arg: g.arguments_) {
+			out << arg->DebugString() << " ";
+		}
+		out << endl;
+		out << g.frac_ << "e" << g.exp_ << endl;
+		out.close();
+	}
+
 	options.SetMaxInitPopulations(options.MaxPopulations());
 	RandomRunner r_runner(options, string(argv[2]));
 	status = r_runner.Start();

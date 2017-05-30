@@ -976,6 +976,74 @@ char RandomRunner::GetChar() {
 	return 'a' + rand() % 26;
 }
 
+StdGeneticRunner::StdGeneticRunner(const RunnerOptions& op, const string project) : GeneticRunner(op, project) {}
+
+Status StdGeneticRunner::Start() {
+	cout << "Start!" << endl;
+	Status read_status = ReadFunctionMetadata();
+	if (!read_status.OK()) return read_status;
+	InitPopulations();
+	// PrintGenes();
+	for(auto gene: genes_) {
+		TestGene(gene);
+	}
+	Evolution();
+}
+
+ulong StdGeneticRunner::GetDouble() {
+	return RandUlong();
+}
+
+uint StdGeneticRunner::GetFloat() {
+	return RandUint();
+}
+
+int StdGeneticRunner::GetInt(bool is_unsigned = false) {
+	return RandUint();
+}
+
+short StdGeneticRunner::GetShort(bool is_unsigned = false) {
+	short value = rand() % ((1 << 15) - 1);
+	if (rand() % 2 == 1) return -value;
+	else return value;
+}
+
+long StdGeneticRunner::GetLong(bool is_unsigned = false) {
+	return RandUlong();
+}
+
+char StdGeneticRunner::GetChar() {
+	return 'a' + rand() % 26;
+}
+
+ulong StdGeneticRunner::MutateDouble(ulong value) {
+	int expt = (value & Exp64) >> 52;
+	expt = expt + rand() % 100 - 50;
+	if (expt < 0) {
+		expt = 0;
+	}
+	if (expt > 2046) {
+		expt = 2046;
+	}
+	int sign = (value & Sign64) >> 63;
+	if (rand() % 10 == 0) sign = 1 - sign;
+	return CreateDouble(sign, expt, MutateDoubleSignificand(value));
+}
+
+uint StdGeneticRunner::MutateFloat(uint value) {
+	int expt = (value & Exp32) >> 23;
+	expt = expt + rand() % 20 - 10;
+	if (expt < 0) {
+		expt = 0;
+	}
+	if (expt > 254) {
+		expt = 254;
+	}
+	int sign = (value & Sign32) >> 31;
+	if (rand() % 10 == 0) sign = 1 - sign;
+	return CreateFloat(sign, expt, MutateFloatSignificand(value));
+}
+
 // InputRunner::InputRunner(const RunnerOptions& op) : Runner(op) {}
 
 // Status InputRunner::Start() {
