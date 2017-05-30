@@ -1,13 +1,13 @@
 #!/bin/bash
 
-make
+# make
 
-cp ../test_program_generator/sf/*.c others/sf
-cp ../test_program_generator/sf/*.meta others/sf
-cp ../test_program_generator/stats/*.c others/stats
-cp ../test_program_generator/stats/*.meta others/stats
+# cp ../test_program_generator/sf/*.c others/sf
+# cp ../test_program_generator/sf/*.meta others/sf
+# cp ../test_program_generator/stats/*.c others/stats
+# cp ../test_program_generator/stats/*.meta others/stats
 
-#cp pso/* others
+# #cp pso/* others
 
 cd others/sf
 files=`ls *.c`
@@ -33,7 +33,12 @@ rm randomlog/sf/*
 for file in $files
 do
 	execfile=${file%.c}
-	./main $execfile sf
+	echo $execfile
+	if [ -e geneticlog/sf/${execfile}.log ]; then
+		echo "already computed!"
+	else
+		./main $execfile sf > output.log 2>&1
+	fi
 done
 
 cd others/stats
@@ -60,5 +65,10 @@ rm randomlog/stats/*
 for file in $files
 do
 	execfile=${file%.c}
-	./main $execfile stats
+	echo $execfile
+	if [ -e geneticlog/stats/${execfile}.log ]; then
+		echo "already computed!"
+	else
+		./main $execfile stats > output.log 2>&1
+	fi
 done

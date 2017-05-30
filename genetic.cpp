@@ -46,6 +46,7 @@ int GeneCmp(const Gene* a, const Gene* b) {
 // RunnerOptions
 RunnerOptions::RunnerOptions() {
 	max_init_populations_ = 120;
+	// max_populations_ = 1000;
 	max_populations_ = 200;
 	execution_timeout_ = 5;
 	max_extreme_values_ = 5;
@@ -193,7 +194,7 @@ void Runner::TestGene(Gene* gene) {
 	} else {
 		printf("input: ");
 		for (auto arg : gene->arguments_) {
-			char output[50];
+			char output[500];
 			arg->ToString(output);
 			printf("%s ", output);
 		}
@@ -567,7 +568,7 @@ Status GeneticRunner::Start() {
 	InitFloatPool();
 	InitLongPool();
 	InitPopulations();
-	//PrintGenes();
+	// PrintGenes();
 	for(auto gene: genes_) {
 		TestGene(gene);
 	}
@@ -677,7 +678,7 @@ ulong GeneticRunner::MutateDouble(ulong value) {
 	}
 	int sign = (value & Sign64) >> 63;
 	if (rand() % 10 == 0) sign = 1 - sign;
-	return CreateDouble(sign, expt);
+	return CreateDouble(sign, expt, MutateDoubleSignificand(value));
 }
 
 uint GeneticRunner::MutateFloat(uint value) {
@@ -695,7 +696,7 @@ uint GeneticRunner::MutateFloat(uint value) {
 	}
 	int sign = (value & Sign32) >> 31;
 	if (rand() % 10 == 0) sign = 1 - sign;
-	return CreateFloat(sign, expt);
+	return CreateFloat(sign, expt, MutateFloatSignificand(value));
 }
 
 int GeneticRunner::MutateInt(int value, bool is_unsigned = false) { // TODO: overflow and underflow

@@ -32,7 +32,7 @@ do
 	execfile=${file%.c}
 	logfile=${execfile}.log
 	cd geneticlog/${comp}
-	gen=
+	gen=0
 	if [ -f $logfile ]; then
 		while read line
 		do
@@ -41,7 +41,7 @@ do
 	fi
 	cd ../..
 	cd randomlog/${comp}
-	ran=
+	ran=0
 	if [ -f $logfile ]; then
 		while read line
 		do

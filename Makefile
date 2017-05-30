@@ -1,9 +1,9 @@
 objects = main.o status.o argument.o genetic.o
 objects_input = input_main.o status.o argument.o genetic.o
-CXXFLAGS=-std=c++0x
+CXXFLAGS=-std=c++0x -g
 
 main : $(objects)
-	g++ -o main $(objects)
+	g++ -g -o main $(objects)
 
 input_main: $(objects_input)
 	g++ -o input_main $(objects_input)

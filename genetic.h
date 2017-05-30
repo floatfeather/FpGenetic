@@ -93,7 +93,7 @@ public:
 	Status Start();
 	using Runner::GetBestGene;
 
-private:
+protected:
 	unsigned long int GetDouble();
 	int GetInt(bool);
 	unsigned int GetFloat();
@@ -117,6 +117,7 @@ private:
 	ulong MutateDoubleSignificand(ulong);
 	unsigned int MutateFloatSignificand(unsigned int);
 
+private:
 	vector<int> dexp_pool_;
 	vector<int> int_pool_;
 	vector<int> fexp_pool_;
