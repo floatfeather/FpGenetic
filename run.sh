@@ -29,6 +29,7 @@ cd ../..
 
 rm geneticlog/sf/*
 rm randomlog/sf/*
+rm stdgeneticlog/sf/*
 
 for file in $files
 do
@@ -61,6 +62,7 @@ cd ../..
 
 rm geneticlog/stats/*
 rm randomlog/stats/*
+rm stdgeneticlog/stats/*
 
 for file in $files
 do

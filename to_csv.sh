@@ -17,7 +17,7 @@ cd ../..
 
 rm result_${comp}.csv
 touch result_${comp}.csv
-echo "function, genetic, random" >> result_${comp}.csv
+echo "function, lsga, random, stdgenetic" >> result_${comp}.csv
 
 for file in $files
 do
@@ -49,6 +49,15 @@ do
 		done < $logfile
 	fi
 	cd ../..
-	echo $execfile $suffix "," $gen "," $ran >> result_${comp}.csv
+	cd stdgeneticlog/${comp}
+	stdg=0
+	if [ -f $logfile ]; then
+		while read line
+		do
+			stdg=$line
+		done < $logfile
+	fi
+	cd ../..
+	echo $execfile $suffix "," $gen "," $ran "," $stdg>> result_${comp}.csv
 done
 
